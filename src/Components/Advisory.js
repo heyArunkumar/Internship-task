@@ -2,26 +2,32 @@ import React, { useState, useEffect } from "react";
 import "antd/dist/antd.min.css";
 import "../Components/Home.css";
 import { Link } from "react-router-dom";
+import {  Tooltip } from "antd";
 import telegramImg from "../Components/assets/Image/telegram.png";
 import { modal_porfolio_response } from "./Data/modal_profolio_response";
+import { Newsletter_response } from "../Components/Data/Newsletter_response";
 import { Insight_response } from "./Data/Insight_response";
 import downloadIcon from "../Components/assets/Image/download-icon.svg";
 import { fact_sheet_Data } from "./Data/Factsheet";
+import sampleFile from "../Components/Data/sample.pdf";
+import { getFormattedDate } from "../Components/Utils/Date";
 
 function Advisory() {
   const [modalResponse, setModalResponse] = useState([]);
   const [factSheetdata, setFactSheetData] = useState([]);
   const [insightResponse, setInsightResponse] = useState([]);
+  const [newsletterResponse, setNewsletterResponse] = useState([]);
 
   useEffect(() => {
     setModalResponse(modal_porfolio_response.folio_last_publish_data);
     setFactSheetData(fact_sheet_Data.fact_sheet);
     setInsightResponse(Insight_response.insights);
+    setNewsletterResponse(Newsletter_response.recommendations);
   }, []);
 
-  console.log("insightResponse", insightResponse);
+  console.log("Newsletter_response", Newsletter_response);
   const InsightslicedArray = insightResponse.slice(0, 4);
-
+  const newsletterslicedArray = newsletterResponse.slice(0, 4);
   return (
     <div>
       <div className="fintsoInsightsWrapper">
@@ -54,7 +60,7 @@ function Advisory() {
             </div>
           </div>
           <div className="table_wrapperr">
-            <table>
+            <table className="modal_table">
               <tbody>
                 <tr>
                   {modalResponse.map((item) => {
@@ -95,11 +101,13 @@ function Advisory() {
                   <td>
                     <div>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <a href={sampleFile} download target="blank">
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </a>
                       </div>
                     </div>
                   </td>
@@ -107,11 +115,13 @@ function Advisory() {
                   <td>
                     <div>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <a href={sampleFile} download target="blank">
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </a>
                       </div>
                     </div>
                   </td>
@@ -119,11 +129,13 @@ function Advisory() {
                   <td>
                     <div>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <a href={sampleFile} download target="blank">
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </a>
                       </div>
                     </div>
                   </td>
@@ -131,22 +143,26 @@ function Advisory() {
                   <td>
                     <div>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <a href={sampleFile} download target="blank">
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </a>
                       </div>
                     </div>
                   </td>
                   <td>
                     <div>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <a href={sampleFile} download target="blank">
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </a>
                       </div>
                     </div>
                   </td>
@@ -164,92 +180,142 @@ function Advisory() {
                     <span className="table_data_heading">Newsletters</span>
                     <span className="table_data_para">34 Unread</span>
                   </div>
-                  <div className="view_all">View All</div>
+                  <div className="view_all">
+                    <Link to="/NewsletterViewAll">View All</Link>
+                  </div>
                 </div>
               </div>
             </div>
-            <table>
-              <thead className="table_thead">
-                <th>Newsletters</th>
-                <th>Tags</th>
-                <th>Date</th>
-                <th></th>
-              </thead>
-              <tbody className="table_body">
-                <tr>
-                  <td className="News_name">Newsletter_test4</td>
-                  <td>
-                    <span className="table_Tags">Newsletter Test</span>
-                  </td>
-                  <td className="table_date">31 May 2022</td>
-                  <td>
-                    <div>
+            <div className="newsletter_table_wrapper">
+              <table className="newsletter_table">
+                <thead className="table_thead">
+                  <th style={{ paddingLeft: "13px" }}>Newsletters</th>
+                  <th>Tags</th>
+                  <th>Date</th>
+                  <th></th>
+                </thead>
+                <tbody className="table_body newsletter_table_body">
+                  {newsletterslicedArray.map((item) => {
+                    return (
+                      <tr>
+                        <td>
+                          <Tooltip placement="bottomLeft" title={item.recommendation_details.name} >
+                            {item.recommendation_details.name}
+                          </Tooltip>
+                        </td>
+                        {/* <td className="News_name">
+                          {item.recommendation_details.name}
+                        </td> */}
+
+                        <td>
+                          {item?.tags?.length > 1 ? (
+                            <div>
+                              <span className="table_Tags">
+                                {item?.tags[0]?.tag_value}
+                              </span>
+                              <span>+{item?.tags?.length - 1}</span>
+                            </div>
+                          ) : (
+                            <span className="table_Tags">
+                              {item?.tags[0]?.tag_value}
+                            </span>
+                          )}
+                        </td>
+                        <td className="table_date">
+                          {getFormattedDate(item.created_date)}
+                        </td>
+                        <td>
+                          <div>
+                            <div>
+                              <a href={sampleFile} download target="blank">
+                                <img
+                                  src={downloadIcon}
+                                  alt="i"
+                                  className="download_img"
+                                />
+                              </a>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+
+                  {/* <tr>
+                    <td className="News_name">Newsletter_test4</td>
+                    <td>
+                      <span className="table_Tags">Newsletter Test</span>
+                    </td>
+                    <td className="table_date">31 May 2022</td>
+                    <td>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <div>
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="News_name">Newsletter_test4</td>
-                  <td>
-                    <span className="table_Tags">Newsletter Test</span>
-                  </td>
-                  <td className="table_date">31 May 2022</td>
-                  <td>
-                    <div>
+                    </td>
+                  </tr> */}
+                  {/* <tr>
+                    <td className="News_name">Newsletter_test4</td>
+                    <td>
+                      <span className="table_Tags">Newsletter Test</span>
+                    </td>
+                    <td className="table_date">31 May 2022</td>
+                    <td>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <div>
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="News_name">Newsletter_test4</td>
-                  <td>
-                    <span className="table_Tags">Newsletter Test</span>
-                  </td>
-                  <td className="table_date">31 May 2022</td>
-                  <td>
-                    <div>
+                    </td>
+                  </tr> */}
+                  {/* <tr>
+                    <td className="News_name">Newsletter_test4</td>
+                    <td>
+                      <span className="table_Tags">Newsletter Test</span>
+                    </td>
+                    <td className="table_date">31 May 2022</td>
+                    <td>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <div>
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="News_name">Newsletter_test4</td>
-                  <td>
-                    <span className="table_Tags">Newsletter Test</span>
-                  </td>
-                  <td className="table_date">31 May 2022</td>
-                  <td>
-                    <div>
+                    </td>
+                  </tr> */}
+                  {/* <tr>
+                    <td className="News_name">Newsletter_test4</td>
+                    <td>
+                      <span className="table_Tags">Newsletter Test</span>
+                    </td>
+                    <td className="table_date">31 May 2022</td>
+                    <td>
                       <div>
-                        <img
-                          src={downloadIcon}
-                          alt="i"
-                          className="download_img"
-                        />
+                        <div>
+                          <img
+                            src={downloadIcon}
+                            alt="i"
+                            className="download_img"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    </td>
+                  </tr> */}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -298,96 +364,59 @@ function Advisory() {
                 </div>
               </div>
             </div>
-            <table>
-              <thead className="table_thead">
-                <th>Name</th>
-                <th>Tags</th>
-                <th>Date</th>
-                <th></th>
-              </thead>
-              <tbody className="table_body">
-                {InsightslicedArray.map((item) => {
-                  return (
-                    <tr>
-                      <td className="News_name">
-                        {item.recommendation_details.name}
-                      </td>
-                      <td>
-                        {item?.tags?.length > 1 ? (
-                          <div>
+            <div className="newsletter_table_wrapper">
+              <table className="newsletter_table">
+                <thead className="table_thead">
+                  <th style={{ paddingLeft: "13px" }}>Name</th>
+                  <th>Tags</th>
+                  <th>Date</th>
+                  <th></th>
+                </thead>
+                <tbody className="table_body insight_table_body">
+                  {InsightslicedArray.map((item) => {
+                    return (
+                      <tr>
+                        <td>
+                          <Tooltip placement="bottomLeft" title={item.recommendation_details.name} >
+                            {item.recommendation_details.name}
+                          </Tooltip>
+                        </td>
+                        <td>
+                          {item?.tags?.length > 1 ? (
+                            <div>
+                              <span className="table_Tags">
+                                {item?.tags[0]?.tag_value}
+                              </span>
+                              <span>+{item?.tags?.length - 1}</span>
+                            </div>
+                          ) : (
                             <span className="table_Tags">
                               {item?.tags[0]?.tag_value}
                             </span>
-                            <span>+{item?.tags?.length - 1}</span>
-                          </div>
-                        ) : (
-                          <span className="table_Tags">
-                            {item?.tags[0]?.tag_value}
-                          </span>
-                        )}
-                      </td>
-                      <td className="table_date">31 May 2022</td>
-                      <td>
-                        <div>
+                          )}
+                        </td>
+                        <td className="table_date">
+                          {getFormattedDate(item.created_date)}
+                        </td>
+                        <td>
                           <div>
-                            <img
-                              src={downloadIcon}
-                              alt="i"
-                              className="download_img"
-                            />
+                            <div>
+                              <a href={sampleFile} download target="blank">
+                                <img
+                                  src={downloadIcon}
+                                  alt="i"
+                                  className="download_img"
+                                />
+                              </a>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-                {/* <tr>
-                <td className="News_name">Newsletter_test4</td>
-                <td>
-                  <span className="table_Tags">InsightTest</span>
-                </td>
-                <td className='table_date'>31 May 2022</td>
-                <td>
-                  <div>
-                    <div><img src={downloadIcon} alt="i" className="download_img"/></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="News_name">Newsletter_test4</td>
-                <td><span className="table_Tags">NewsletterTest</span></td>
-                <td className='table_date'>31 May 2022</td>
-                <td>
-                  <div>
-                    <div><img src={downloadIcon} alt="i" className="download_img"/></div>
-                  </div>
-                </td>
-
-              </tr>
-              <tr>
-                <td className="News_name">Newsletter_test4</td>
-                <td><span className="table_Tags">Others</span>+1</td>
-                <td className='table_date'>31 May 2022</td>
-                <td>
-                  <div>
-                    <div><img src={downloadIcon} alt="i" className="download_img"/></div>
-                  </div>
-                </td>
-
-              </tr>
-              <tr>
-                <td className="News_name">Newsletter_test4</td>
-                <td><span className="table_Tags">Others</span>+1</td>
-                <td className='table_date'>31 May 2022</td>
-                <td>
-                  <div>
-                    <div><img src={downloadIcon} alt="i" className="download_img"/></div>
-                  </div>
-                </td>
-
-              </tr> */}
-              </tbody>
-            </table>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

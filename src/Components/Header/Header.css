@@ -14,7 +14,7 @@
 }
 
 .advisory{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
 }
 @media only screen and (max-width: 520px)  {
@@ -25,3 +25,16 @@
 .advisory a{
     color: black !important;
 }
+
+
+.newsletter_table_body, .insight_table_body, .insight_viewAll, .newsletter_viewAll{
+    border-left: 4px solid #1692e6;
+}
+
+/* .modal_table{
+    box-sizing: content-box;
+    border-image: linear-gradient(red, yellow, green);
+    border-image-slice: 1;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+} */

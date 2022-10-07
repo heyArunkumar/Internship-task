@@ -7,23 +7,26 @@ import Advisory from "../Advisory";
 import About from "../About";
 import InsightsViewAll from "../InsightsViewAll";
 import HeaderFun from "../Header/Header";
+import NewsletterViewAll from "../NewsletterViewAll";
 
 function Dashboard() {
   return (
     <Layout>
       <SideBar />
       <Layout>
-        <Header> <HeaderFun /></Header>
+        <Header>
+          {" "}
+          <HeaderFun />
+        </Header>
         {/* <Content> */}
-          <Routes>
-            <Route path="/" element={<InsightsViewAll />} />
-            <Route path="/Advisory" element={<Advisory />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/ModelPortfolios" element={<About/>} />
-            <Route path="/Insights" element={<InsightsViewAll />} />
-            
-
-          </Routes>
+        <Routes>
+          <Route path="/" element={<InsightsViewAll />} />
+          <Route path="/Advisory" element={<Advisory />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/ModelPortfolios" element={<About />} />
+          <Route path="/Insights" element={<InsightsViewAll />} />
+          <Route path="/NewsletterViewAll" element={<NewsletterViewAll />} />
+        </Routes>
         {/* </Content> */}
       </Layout>
     </Layout>

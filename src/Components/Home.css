@@ -16,7 +16,7 @@
 }
 .FintsoChannel{
     color: #1990ff;
-    
+    cursor: pointer;
 }
 .tableOne{
     display: flex;
@@ -32,12 +32,12 @@
     padding: 10px;
 }
 .model_portfolio{
-    padding: 16px;
+    padding: 16px 8px 16px 16px;
     width: 60%;
 }
 .model_portfoli{
     width: 50%;
-    padding: 16px;
+    padding: 16px 16px 16px 8px;
 }
 table{
     background-color: #ffffff;
@@ -53,7 +53,7 @@ table{
     height: 44px;
 }
 table tr td{
-    padding-left: 20px;
+    padding-left: 14px;
 }
 .thead{
     background-color: #fafafa;
@@ -67,7 +67,7 @@ th{
 }
 .table_data_para{
     color: #888888;
-    font-size: 12px;
+    font-size: 11px;
 }
 .view_all{
     margin-right: 10px;
@@ -75,7 +75,9 @@ th{
     color: #1990ff;
 }
 .model_portfoli .table_data_para{
+    font-weight: 500;
     color: #23c4a3 !important;
+    cursor: pointer;
 }
 .modalYear , .modalValue{
     margin-top: 15px;
@@ -94,25 +96,26 @@ thead th{
 
 .table_thead th{
     text-align: left;
-    padding-left: 21px;
+    padding-left: 13px;
     font-weight: 500;
     font-size: 13px;
-    color: #818181;
+    color: #818181cf;
 }
 .News_name{
     font-weight: 700;
-    font-size: 13px;
+    font-size: 12px;
 }      
 .table_Tags{
     border: 1px solid #aedffe;
-    font-size: 11px;
+    font-size: 10px;
     padding: 1px 5px;
     color:#54aded;
     font-weight: 500;
     padding-bottom: 3px;
 }
 .table_date{
-    font-size: 12px;
+    font-size: 11px;
+    color: #8b8c8c;
 }
 .download_img{
     width: 19px;
@@ -134,7 +137,7 @@ thead th{
     padding: 17px;
     display: flex;
     background-color: #ffffff;
-    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 6px rgb(0 0 0 / 10%);
     border-radius: 4px;
 }
 .factsheet_img{
@@ -175,8 +178,17 @@ thead th{
  .model_portfolio{
     width: 100%;
     overflow-x: scroll;
+    padding: 16px;
  }
- 
+ .model_portfoli{
+    padding: 16px;
+ }
+ .newsletter_table tr td{
+    min-width: 150px;
+}
+.newsletter_table_wrapper{
+    overflow-x: scroll;
+}
  .model_portfoli{
     width: 100%;
  }
@@ -191,13 +203,19 @@ thead th{
 
 .Modal_table_container{
     margin-top: 30px;
-    padding: 16px;
+    padding: 15px;
 
 }
 .Modal_table_container .performance{
-    font-size: 12px;
-    color: #2c3f6e;
+    float: right;
+    font-size: 11px;
+    color: #1990ff;
     font-weight: 700;
+    cursor: pointer;
+}
+.performance img{
+    margin-right: 3px;
+    width: 16px;
 }
 .Modal_table_container table{
     background-color: #fafafa;
@@ -206,13 +224,13 @@ thead th{
     background-color: #ffffff;
 }
 .Modal_table_container table tbody tr{
-    height: 55px;
+    height: 48px;
 }
 .Modal_table_container table thead{
     height: 50px;
 }
 .Modal_table_container table tbody tr td:first-child{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
 }
 .Modal_table_container table tbody tr td{
@@ -221,7 +239,7 @@ thead th{
 .Modal_table_head th{
     font-size: 13px;
     text-align: left;
-    padding-left: 22px;
+    padding-left: 15px;
     
 }
 .Modal_table_container table tbody tr td:not(:first-child){
@@ -255,4 +273,50 @@ thead th{
     .modal_table{
         overflow-x: scroll;
     }
+    .newsletter_table_container table tbody tr td{
+        min-width: 220px !important;
+    }
+    
 }
+
+.newsletter_table tbody tr td:first-child{
+    min-width: 120px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.newsletter_table tbody tr td:nth-child(3){
+    min-width: 105px;
+    
+}
+
+.newsletter_table tbody tr td:nth-child(2){
+    min-width: 130px;
+    
+}
+.newsletter_table tbody tr:hover , .insight_table_body tbody tr:hover ,
+.newsletter_viewAll tbody tr:hover, .insight_viewAll tbody tr:hover{
+    background-color: #e6f6ff;
+    cursor: pointer;
+}
+
+.ant-tooltip-inner{
+    font-size: 12px;
+    color:#525252 !important;
+    background-color: #dfe0e0;
+    font-weight: 500;
+    min-height: 27px;
+    padding: 5px 8px;
+    margin-left: 20px;
+    margin-top: -16px;
+    border-radius: 5px;
+}
+.ant-tooltip-arrow{
+    display: none;
+}
+/* table tbody{
+    background: linear-gradient(#ffffff ,#ffffff), 
+    linear-gradient(to right, red, purple);
+background-origin: padding-box, border-box;
+background-repeat: no-repeat; 
+border-bottom: 5px solid transparent;
+} */

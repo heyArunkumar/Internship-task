@@ -1,41 +1,34 @@
 import React, { useState, useEffect } from "react";
 import "antd/dist/antd.min.css";
-
-import { Insight_response } from "./Data/Insight_response";
+import { Newsletter_response } from "./Data/Newsletter_response";
 import downloadIcon from "../Components/assets/Image/download-icon.svg";
 import { getFormattedDate } from "../Components/Utils/Date";
 import refreshIcon from "../Components/assets/Factsheet-img/refresh.png";
 import sampleFile from "../Components/Data/sample.pdf";
 
 function InsightsViewAll() {
-  const [insightResponse, setInsightResponse] = useState([]);
+  const [newsletterResponse, setNewsletterResponse] = useState([]);
 
   useEffect(() => {
-    setInsightResponse(Insight_response.insights);
+    setNewsletterResponse(Newsletter_response.recommendations);
   }, []);
-  console.log("modalResponse=====", insightResponse);
-  // const pathurl = window.location.pathname;
-  // const urlId = pathurl.split("/");
-  // const id = urlId.slice(urlId.length - 1);
-  // const name = pathurl.split("/").slice(-2, -1)[0];
-  // console.log("id",id);
-  // console.log("name",name)
+  console.log("NewsletterViewAll=====", newsletterResponse);
   return (
     <div>
-      <div className="Modal_table_container">
+      <div className="Modal_table_container newsletter_table_container">
         <p className="performance">
           <img src={refreshIcon} alt="refresh_icon" /> REFRESH
         </p>
         <div className="modal_table">
-          <table className="insight_viewAll">
+          <table className="newsletter_viewAll">
             <thead className="Modal_table_head">
               <th>Name</th>
               <th>Tags</th>
               <th>Date</th>
               <th>Shared With</th>
             </thead>
-            <tbody className="insight_viewAll">
-              {insightResponse?.map((item) => {
+            <tbody>
+              {newsletterResponse?.map((item) => {
                 console.log("item", item);
                 return (
                   <tr key={item.id}>
@@ -66,6 +59,7 @@ function InsightsViewAll() {
                   </tr>
                 );
               })}
+
             </tbody>
           </table>
         </div>

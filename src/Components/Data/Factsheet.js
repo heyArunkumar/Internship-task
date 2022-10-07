@@ -6,7 +6,7 @@ import img4 from '../assets/Factsheet-img/MicrosoftTeams-image (4).png';
 export const fact_sheet_Data ={
     fact_sheet :[
         {
-          img:img1,
+          img:img3,
           fund_type:"Mutual Fund",
           scheme:"Schemes"
         },
@@ -16,7 +16,7 @@ export const fact_sheet_Data ={
             scheme:"Baskets"
           },
           {
-            img:img3,
+            img:img1,
             fund_type:"Fixed Deposite",
             scheme:"Interest Rates"
           },
