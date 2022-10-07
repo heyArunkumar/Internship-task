@@ -1,0 +1,258 @@
+.telegramImg{
+    width: 25px;
+}
+.fintsoInsights{
+    padding: 16px 16px;
+    background-color: #ffffff;
+}
+.fintsoInsightsWrapper{
+    padding: 30px 17px 6px 17px;
+}
+.fintsoInsights span{
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    
+}
+.FintsoChannel{
+    color: #1990ff;
+    
+}
+.tableOne{
+    display: flex;
+    
+}
+.tableHeading{
+    padding: 10px 8px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.tableHeading span{
+    padding: 10px;
+}
+.model_portfolio{
+    padding: 16px;
+    width: 60%;
+}
+.model_portfoli{
+    width: 50%;
+    padding: 16px;
+}
+table{
+    background-color: #ffffff;
+    width: 100%;
+}
+.model_portfolio tr{
+    height: 86px;
+}
+.model_portfolio tr td{
+    border-right: 1px solid #888888;
+}
+.model_portfoli tr{
+    height: 44px;
+}
+table tr td{
+    padding-left: 20px;
+}
+.thead{
+    background-color: #fafafa;
+}
+th{
+    height: 50px;
+}
+.table_data_heading{
+    font-size: 13px;
+    font-weight: 700;
+}
+.table_data_para{
+    color: #888888;
+    font-size: 12px;
+}
+.view_all{
+    margin-right: 10px;
+    font-size: 13px;
+    color: #1990ff;
+}
+.model_portfoli .table_data_para{
+    color: #23c4a3 !important;
+}
+.modalYear , .modalValue{
+    margin-top: 15px;
+  }
+thead th{
+    height: 40px !important;
+}
+  
+.table_wrapper{
+    height: 300px;
+    background-color: #ffffff;
+}
+.table_body{
+    background-color: #f7f9fe;
+}
+
+.table_thead th{
+    text-align: left;
+    padding-left: 21px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #818181;
+}
+.News_name{
+    font-weight: 700;
+    font-size: 13px;
+}      
+.table_Tags{
+    border: 1px solid #aedffe;
+    font-size: 11px;
+    padding: 1px 5px;
+    color:#54aded;
+    font-weight: 500;
+    padding-bottom: 3px;
+}
+.table_date{
+    font-size: 12px;
+}
+.download_img{
+    width: 19px;
+}
+
+.fact_sheet{
+    background-color: #ffffff;
+}
+
+.fact_sheet_container{
+   display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  padding: 25px 40px;
+
+  
+}
+.fact_sheet_box{
+    padding: 17px;
+    display: flex;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    border-radius: 4px;
+}
+.factsheet_img{
+    width: 32px;
+    margin-right: 12px;
+}
+
+.fund_type{
+    font-size: 13px;
+    font-weight: 700;
+}
+.fund_Scheme{
+  color: #7e7e7e;
+  font-size: 12px;
+  font-weight: 500;
+} 
+
+@media only screen and (max-width: 480px){
+    .fact_sheet_container{
+        grid-template-columns: auto;
+    }
+    .tableHeading{
+    align-items: center;
+    flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px)  {
+  /* .model_heading{
+        width: 609px;
+    } */
+    .table_wrapperr{
+        overflow-x: scroll;
+    }
+ .table_data_para{
+    width: 100px;
+ }
+ .model_portfolio{
+    width: 100%;
+    overflow-x: scroll;
+ }
+ 
+ .model_portfoli{
+    width: 100%;
+ }
+ .table_head{
+    /* width: max-content; */
+    background-color: #fafafa;
+ }
+ .tableOne{
+    flex-direction: column;
+ }
+}
+
+.Modal_table_container{
+    margin-top: 30px;
+    padding: 16px;
+
+}
+.Modal_table_container .performance{
+    font-size: 12px;
+    color: #2c3f6e;
+    font-weight: 700;
+}
+.Modal_table_container table{
+    background-color: #fafafa;
+}
+.Modal_table_container table tbody{
+    background-color: #ffffff;
+}
+.Modal_table_container table tbody tr{
+    height: 55px;
+}
+.Modal_table_container table thead{
+    height: 50px;
+}
+.Modal_table_container table tbody tr td:first-child{
+    font-size: 14px;
+    font-weight: 700;
+}
+.Modal_table_container table tbody tr td{
+    width: 100px !important;
+}
+.Modal_table_head th{
+    font-size: 13px;
+    text-align: left;
+    padding-left: 22px;
+    
+}
+.Modal_table_container table tbody tr td:not(:first-child){
+    font-size: 13px;
+    color: #808080;
+}
+.allocation_framework{
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-bottom: 13px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #2c3f6e;
+    
+}
+.allocation_framework span{
+    color: #3199ff;
+    
+}
+.tags span{
+    margin-right: 6px;
+}
+.para{
+    background-color: #fafafa;
+}
+
+@media only screen and (max-width: 768px) {
+    .Modal_table_container table tbody tr td{
+        min-width: 150px;
+    }
+    .modal_table{
+        overflow-x: scroll;
+    }
+}

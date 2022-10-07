@@ -1,0 +1,9 @@
+<svg id="Reports" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <rect id="Rectangle_4644" data-name="Rectangle 4644" width="36" height="36" fill="rgba(0,0,0,0)" opacity="0"/>
+  <path id="Path_41106" data-name="Path 41106" d="M31,34H13a1,1,0,0,1-1-1V11a1,1,0,0,1,1-1H31a1,1,0,0,1,1,1V33A1,1,0,0,1,31,34ZM14,32H30V12H14Z" fill="#8296c6"/>
+  <rect id="Rectangle_4641" data-name="Rectangle 4641" width="12" height="2" transform="translate(16 16)" fill="#8296c6"/>
+  <rect id="Rectangle_4642" data-name="Rectangle 4642" width="12" height="2" transform="translate(16 20)" fill="#8296c6"/>
+  <rect id="Rectangle_4643" data-name="Rectangle 4643" width="12" height="2" transform="translate(16 24)" fill="#8296c6"/>
+  <path id="Path_41107" data-name="Path 41107" d="M6,24V4H24V3a1,1,0,0,0-1-1H5A1,1,0,0,0,4,3V25a1,1,0,0,0,1,1H6Z" fill="#8296c6"/>
+  <path id="Path_41108" data-name="Path 41108" d="M10,28V8H28V7a1,1,0,0,0-1-1H9A1,1,0,0,0,8,7V29a1,1,0,0,0,1,1h1Z" fill="#8296c6"/>
+</svg>

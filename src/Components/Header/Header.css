@@ -1,0 +1,27 @@
+.ant-layout-header{
+    background-color: #ffffff;
+    padding: 0 20px;
+    line-height: 45px;
+    height: 50px;
+}
+.headerImg img{
+    width: 25px;
+    margin-right: 10px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.advisory{
+    font-size: 14px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 520px)  {
+    .header{
+         justify-content: space-around;
+    }
+}
+.advisory a{
+    color: black !important;
+}
