@@ -7,16 +7,20 @@ import telegramImg from "../Components/assets/Image/telegram.png";
 import { modal_porfolio_response } from "./Data/modal_profolio_response";
 import { Newsletter_response } from "../Components/Data/Newsletter_response";
 import { Insight_response } from "./Data/Insight_response";
-import downloadIcon from "../Components/assets/Image/download-icon.svg";
+
 import { fact_sheet_Data } from "./Data/Factsheet";
 import sampleFile from "../Components/Data/sample.pdf";
 import { getFormattedDate } from "../Components/Utils/Date";
+import download from "../Components/assets/TableIcon/download (4).png"
+
 
 function Advisory() {
   const [modalResponse, setModalResponse] = useState([]);
   const [factSheetdata, setFactSheetData] = useState([]);
   const [insightResponse, setInsightResponse] = useState([]);
   const [newsletterResponse, setNewsletterResponse] = useState([]);
+
+ 
 
   useEffect(() => {
     setModalResponse(modal_porfolio_response.folio_last_publish_data);
@@ -54,13 +58,13 @@ function Advisory() {
                   </span>
                 </div>
                 <div className="view_all">
-                  <Link to="/ModelPortfolios">View All</Link>
+                  <Link to="/Advisory/ModelPortfolios">View All</Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="table_wrapperr">
-            <table className="modal_table">
+            <table className="modal_table Modal_table">
               <tbody>
                 <tr>
                   {modalResponse.map((item) => {
@@ -95,7 +99,9 @@ function Advisory() {
                       </td>
                     );
                   })}
+             
                 </tr>
+               
 
                 <tr>
                   <td>
@@ -103,8 +109,8 @@ function Advisory() {
                       <div>
                         <a href={sampleFile} download target="blank">
                           <img
-                            src={downloadIcon}
-                            alt="i"
+                            src={download}
+                            alt="download"
                             className="download_img"
                           />
                         </a>
@@ -117,8 +123,8 @@ function Advisory() {
                       <div>
                         <a href={sampleFile} download target="blank">
                           <img
-                            src={downloadIcon}
-                            alt="i"
+                            src={download}
+                            alt="download"
                             className="download_img"
                           />
                         </a>
@@ -131,8 +137,8 @@ function Advisory() {
                       <div>
                         <a href={sampleFile} download target="blank">
                           <img
-                            src={downloadIcon}
-                            alt="i"
+                            src={download}
+                            alt="download"
                             className="download_img"
                           />
                         </a>
@@ -145,8 +151,8 @@ function Advisory() {
                       <div>
                         <a href={sampleFile} download target="blank">
                           <img
-                            src={downloadIcon}
-                            alt="i"
+                            src={download}
+                            alt="download"
                             className="download_img"
                           />
                         </a>
@@ -158,15 +164,18 @@ function Advisory() {
                       <div>
                         <a href={sampleFile} download target="blank">
                           <img
-                            src={downloadIcon}
-                            alt="i"
+                            src={download}
+                            alt="download"
                             className="download_img"
                           />
                         </a>
                       </div>
                     </div>
+                    
                   </td>
+
                 </tr>
+                
               </tbody>
             </table>
           </div>
@@ -181,7 +190,7 @@ function Advisory() {
                     <span className="table_data_para">34 Unread</span>
                   </div>
                   <div className="view_all">
-                    <Link to="/NewsletterViewAll">View All</Link>
+                    <Link to="/Advisory/NewsletterViewAll">View All</Link>
                   </div>
                 </div>
               </div>
@@ -229,7 +238,7 @@ function Advisory() {
                             <div>
                               <a href={sampleFile} download target="blank">
                                 <img
-                                  src={downloadIcon}
+                                  src={download}
                                   alt="i"
                                   className="download_img"
                                 />
@@ -359,7 +368,7 @@ function Advisory() {
                     <span className="table_data_para">9 Unread</span>
                   </div>
                   <div className="view_all">
-                    <Link to="/Insights">View All</Link>
+                    <Link to="/Advisory/Insights">View All</Link>
                   </div>
                 </div>
               </div>
@@ -387,7 +396,7 @@ function Advisory() {
                               <span className="table_Tags">
                                 {item?.tags[0]?.tag_value}
                               </span>
-                              <span>+{item?.tags?.length - 1}</span>
+                              <span className="table_tags_value"> +{item?.tags?.length - 1}</span>
                             </div>
                           ) : (
                             <span className="table_Tags">
@@ -403,7 +412,7 @@ function Advisory() {
                             <div>
                               <a href={sampleFile} download target="blank">
                                 <img
-                                  src={downloadIcon}
+                                  src={download}
                                   alt="i"
                                   className="download_img"
                                 />

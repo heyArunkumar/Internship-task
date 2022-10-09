@@ -99,5 +99,7 @@
   .ant-layout-sider-zero-width-trigger{
     background-color: #022d8e;
   }
-  
+  .ant-layout-sider-zero-width-trigger {
+    top: 3px;
+}
   

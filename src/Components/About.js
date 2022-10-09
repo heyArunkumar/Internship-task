@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "antd/dist/antd.min.css";
 import { modal_porfolio_response } from "./Data/modal_profolio_response";
 import downloadIcon from "../Components/assets/Image/download-icon.svg";
+import infoIcon from "../Components/assets/Factsheet-img/information.png"
 
 function About() {
   const [modalResponsedata, setModalResponsedata] = useState([]);
@@ -19,9 +20,9 @@ function About() {
             <thead className="Modal_table_head">
               <th>Risk Profile</th>
               <th>1Y Return</th>
-              <th>3Y Return</th>
-              <th>5Y Return</th>
-              <th>Since Mar 2022</th>
+              <th>3Y Return <img src={infoIcon} className="info_icon" alt="infoIcon"/></th>
+              <th>5Y Return <img src={infoIcon} className="info_icon" alt="infoIcon"/></th>
+              <th>Since Mar 2022 <img src={infoIcon} className="info_icon" alt="infoIcon"/></th>
             </thead>
             <tbody>
               {modalResponsedata.map((item) => {
@@ -44,68 +45,6 @@ function About() {
                 );
               })}
 
-              {/* <tr>
-              <td>Conservative</td>
-              <td>12.2 %</td>
-              <td>12.3 %</td>
-              <td>10.1 %</td>
-              <td>9.9 %</td>
-              <td>
-             
-                   <img src={downloadIcon} alt="i" className="download_img"/>
-                  
-              </td>
-            </tr>
-
-            <tr>
-              <td>Conservative</td>
-              <td>12.2 %</td>
-              <td>12.3 %</td>
-              <td>10.1 %</td>
-              <td>9.9 %</td>
-              <td>
-              
-                    <img src={downloadIcon} alt="i" className="download_img"/>
-                
-              </td>
-            </tr>
-            <tr>
-              <td>Conservative</td>
-              <td>12.2 %</td>
-              <td>12.3 %</td>
-              <td>10.1 %</td>
-              <td>9.9 %</td>
-              <td>
-              
-                  <img src={downloadIcon} alt="i" className="download_img"/>
-             
-              </td>
-            </tr>
-            <tr>
-              <td>Conservative</td>
-              <td>12.2 %</td>
-              <td>12.3 %</td>
-              <td>10.1 %</td>
-              <td>9.9 %</td>
-              <td>
-             
-                  <img src={downloadIcon} alt="i" className="download_img"/>
-                 
-              </td>
-            </tr>
-            <tr>
-              <td>Conservative</td>
-              <td>12.2 %</td>
-              <td>12.3 %</td>
-              <td>10.1 %</td>
-              <td>9.9 %</td>
-              <td>
-            
-                  <img src={downloadIcon} alt="i" className="download_img"/>
-                  
-              </td>
-            </tr>
-             */}
             </tbody>
           </table>
         </div>

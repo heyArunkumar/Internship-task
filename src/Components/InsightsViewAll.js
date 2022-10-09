@@ -2,18 +2,24 @@ import React, { useState, useEffect } from "react";
 import "antd/dist/antd.min.css";
 
 import { Insight_response } from "./Data/Insight_response";
-import downloadIcon from "../Components/assets/Image/download-icon.svg";
+import downloadIcon from "../Components/assets/TableIcon/download (4).png";
 import { getFormattedDate } from "../Components/Utils/Date";
 import refreshIcon from "../Components/assets/Factsheet-img/refresh.png";
 import sampleFile from "../Components/Data/sample.pdf";
+import searchIcon from "../Components/assets/TableIcon/loupe.png";
+import filterIcon from "../Components/assets/TableIcon/filter.png";
+import dateIcon from "../Components/assets/TableIcon/date.png";
+import sortIcon from "../Components/assets/TableIcon/sort.png";
 
 function InsightsViewAll() {
+
   const [insightResponse, setInsightResponse] = useState([]);
 
   useEffect(() => {
     setInsightResponse(Insight_response.insights);
   }, []);
   console.log("modalResponse=====", insightResponse);
+  
   // const pathurl = window.location.pathname;
   // const urlId = pathurl.split("/");
   // const id = urlId.slice(urlId.length - 1);
@@ -23,15 +29,15 @@ function InsightsViewAll() {
   return (
     <div>
       <div className="Modal_table_container">
-        <p className="performance">
+        <p className="performance_refresh">
           <img src={refreshIcon} alt="refresh_icon" /> REFRESH
         </p>
         <div className="modal_table">
           <table className="insight_viewAll">
             <thead className="Modal_table_head">
-              <th>Name</th>
-              <th>Tags</th>
-              <th>Date</th>
+              <th>Name <img src={searchIcon} alt="searchicon " className="table_icon"/> </th>
+              <th>Tags <img src={filterIcon} alt="searchicon " className="table_icon"/> </th>
+              <th>Date<span><img src={sortIcon} alt="searchicon " className="sort_icon"/></span> <img src={dateIcon} alt="searchicon " className="table_icon"/> </th>
               <th>Shared With</th>
             </thead>
             <tbody className="insight_viewAll">
@@ -70,9 +76,9 @@ function InsightsViewAll() {
           </table>
         </div>
         <div className="para">
-          <p className="allocation_framework">
+        <p className="allocation_framework pagination">
             {" "}
-            <span>Click here </span>to understand our asset allocation framework
+            Item per page: 10  <span>1-9 of 9 </span>{`< >`}
           </p>
         </div>
       </div>
