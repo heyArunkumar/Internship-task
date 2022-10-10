@@ -14,15 +14,9 @@ import NewsletterViewAll from "../NewsletterViewAll";
 function Dashboard() {
   const { pathname} = useLocation();
   
-  // const pathurl = window.location.pathname;
-  // const urlId = pathurl.split("/");
-  // const pathName = urlId.slice(urlId.length - 1);
- 
-  // console.log("id",pathname);
 
 let name =String(pathname)
 const pathName = name.split("/")
-// const pathName = name.slice(name.length - 1);
 
 
   return (
@@ -33,7 +27,7 @@ const pathName = name.split("/")
           {" "}
           <HeaderFun pathName={pathName}/>
         </Header>
-        {/* <Content> */}
+      
         <Routes>
           <Route path="/" element={<InsightsViewAll />} />
           <Route path="/Advisory" element={<Advisory />} />
@@ -42,7 +36,7 @@ const pathName = name.split("/")
           <Route path="/Advisory/Insights" element={<InsightsViewAll />} />
           <Route path="/Advisory/Newsletters" element={<NewsletterViewAll />} />
         </Routes>
-        {/* </Content> */}
+      
       </Layout>
     </Layout>
   );

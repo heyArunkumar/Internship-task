@@ -25,7 +25,7 @@ const SideBar=()=> {
             mode="inline"
             defaultSelectedKeys={["2"]}
             className="middleIcon"
-            // style={{ marginTop: "120px" }}
+           
           >
            <Menu.Item className='logo'>
            <Link to="/" className='navIcon logo'> <img src={images.img1} alt="" className='navIcon'/></Link>

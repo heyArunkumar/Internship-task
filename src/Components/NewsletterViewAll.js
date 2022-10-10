@@ -16,7 +16,7 @@ function InsightsViewAll() {
   useEffect(() => {
     setNewsletterResponse(Newsletter_response.recommendations);
   }, []);
-  console.log("NewsletterViewAll=====", newsletterResponse);
+ 
   return (
     <div>
       <div className="Modal_table_container newsletter_table_container">

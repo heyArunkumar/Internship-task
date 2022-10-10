@@ -10,7 +10,7 @@ function About() {
   useEffect(() => {
     setModalResponsedata(modal_porfolio_response.folio_last_publish_data);
   }, []);
-  console.log("modalResponse=====", modalResponsedata);
+ 
   return (
     <div>
       <div className="Modal_table_container">

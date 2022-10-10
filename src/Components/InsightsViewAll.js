@@ -18,14 +18,8 @@ function InsightsViewAll() {
   useEffect(() => {
     setInsightResponse(Insight_response.insights);
   }, []);
-  console.log("modalResponse=====", insightResponse);
-  
-  // const pathurl = window.location.pathname;
-  // const urlId = pathurl.split("/");
-  // const id = urlId.slice(urlId.length - 1);
-  // const name = pathurl.split("/").slice(-2, -1)[0];
-  // console.log("id",id);
-  // console.log("name",name)
+
+ 
   return (
     <div>
       <div className="Modal_table_container">

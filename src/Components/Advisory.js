@@ -29,7 +29,7 @@ function Advisory() {
     setNewsletterResponse(Newsletter_response.recommendations);
   }, []);
 
-  console.log("Newsletter_response", Newsletter_response);
+
   const InsightslicedArray = insightResponse.slice(0, 4);
   const newsletterslicedArray = newsletterResponse.slice(0, 4);
   return (
@@ -212,9 +212,7 @@ function Advisory() {
                             {item.recommendation_details.name}
                           </Tooltip>
                         </td>
-                        {/* <td className="News_name">
-                          {item.recommendation_details.name}
-                        </td> */}
+                        
 
                         <td>
                           {item?.tags?.length > 1 ? (
@@ -249,79 +247,7 @@ function Advisory() {
                       </tr>
                     );
                   })}
-
-                  {/* <tr>
-                    <td className="News_name">Newsletter_test4</td>
-                    <td>
-                      <span className="table_Tags">Newsletter Test</span>
-                    </td>
-                    <td className="table_date">31 May 2022</td>
-                    <td>
-                      <div>
-                        <div>
-                          <img
-                            src={downloadIcon}
-                            alt="i"
-                            className="download_img"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr> */}
-                  {/* <tr>
-                    <td className="News_name">Newsletter_test4</td>
-                    <td>
-                      <span className="table_Tags">Newsletter Test</span>
-                    </td>
-                    <td className="table_date">31 May 2022</td>
-                    <td>
-                      <div>
-                        <div>
-                          <img
-                            src={downloadIcon}
-                            alt="i"
-                            className="download_img"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr> */}
-                  {/* <tr>
-                    <td className="News_name">Newsletter_test4</td>
-                    <td>
-                      <span className="table_Tags">Newsletter Test</span>
-                    </td>
-                    <td className="table_date">31 May 2022</td>
-                    <td>
-                      <div>
-                        <div>
-                          <img
-                            src={downloadIcon}
-                            alt="i"
-                            className="download_img"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr> */}
-                  {/* <tr>
-                    <td className="News_name">Newsletter_test4</td>
-                    <td>
-                      <span className="table_Tags">Newsletter Test</span>
-                    </td>
-                    <td className="table_date">31 May 2022</td>
-                    <td>
-                      <div>
-                        <div>
-                          <img
-                            src={downloadIcon}
-                            alt="i"
-                            className="download_img"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr> */}
+            
                 </tbody>
               </table>
             </div>

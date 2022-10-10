@@ -174,9 +174,7 @@ thead th{
 }
 
 @media only screen and (max-width: 768px)  {
-  /* .model_heading{
-        width: 609px;
-    } */
+ 
     .table_wrapperr{
         overflow-x: scroll;
     }
@@ -201,7 +199,7 @@ thead th{
     width: 100%;
  }
  .table_head{
-    /* width: max-content; */
+
     background-color: #fafafa;
  }
  .tableOne{
