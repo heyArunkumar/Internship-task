@@ -190,7 +190,7 @@ function Advisory() {
                     <span className="table_data_para">34 Unread</span>
                   </div>
                   <div className="view_all">
-                    <Link to="/Advisory/NewsletterViewAll">View All</Link>
+                    <Link to="/Advisory/Newsletters">View All</Link>
                   </div>
                 </div>
               </div>

@@ -40,7 +40,7 @@ const pathName = name.split("/")
           <Route path="/about" element={<About />} />
           <Route path="/Advisory/ModelPortfolios" element={<About />} />
           <Route path="/Advisory/Insights" element={<InsightsViewAll />} />
-          <Route path="/Advisory/NewsletterViewAll" element={<NewsletterViewAll />} />
+          <Route path="/Advisory/Newsletters" element={<NewsletterViewAll />} />
         </Routes>
         {/* </Content> */}
       </Layout>
